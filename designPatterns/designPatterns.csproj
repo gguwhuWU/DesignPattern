@@ -57,6 +57,17 @@
     <Compile Include="Decorator\CondimentDecorator\Pork.cs" />
     <Compile Include="Decorator\IBreakfast.cs" />
     <Compile Include="Decorator\ICondimentDecorator.cs" />
+    <Compile Include="Factory\IServant.cs" />
+    <Compile Include="Factory\ISummon.cs" />
+    <Compile Include="Factory\Servant\Archer.cs" />
+    <Compile Include="Factory\Servant\Assassin.cs" />
+    <Compile Include="Factory\Servant\Berserker.cs" />
+    <Compile Include="Factory\Servant\Caster.cs" />
+    <Compile Include="Factory\Servant\Lancer.cs" />
+    <Compile Include="Factory\Servant\Rider.cs" />
+    <Compile Include="Factory\Servant\Saber.cs" />
+    <Compile Include="Factory\Summon\ArcherSummon.cs" />
+    <Compile Include="Factory\Summon\SaberSummon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proxy\IService.cs" />
