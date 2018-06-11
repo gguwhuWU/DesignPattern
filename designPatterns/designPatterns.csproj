@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builder\BuilderComputer\ConcreteHighEndBuilder.cs" />
+    <Compile Include="Builder\BuilderComputer\ConcreteLowEndBuilder.cs" />
+    <Compile Include="Builder\BuilderComputer\ConcreteMiddleEndBuilder.cs" />
+    <Compile Include="Builder\Computer.cs" />
+    <Compile Include="Builder\Director.cs" />
+    <Compile Include="Builder\IBuilderComputer.cs" />
     <Compile Include="Decorator\Breakfast\Bego.cs" />
     <Compile Include="Decorator\Breakfast\Hamburger.cs" />
     <Compile Include="Decorator\Breakfast\Quiche.cs" />
@@ -57,6 +63,11 @@
     <Compile Include="Decorator\CondimentDecorator\Pork.cs" />
     <Compile Include="Decorator\IBreakfast.cs" />
     <Compile Include="Decorator\ICondimentDecorator.cs" />
+    <Compile Include="Facade\FacadeSystem.cs" />
+    <Compile Include="Facade\SubSystem\SubSystem1.cs" />
+    <Compile Include="Facade\SubSystem\SubSystem2.cs" />
+    <Compile Include="Facade\SubSystem\SubSystem3.cs" />
+    <Compile Include="Facade\SubSystem\SubSystem4.cs" />
     <Compile Include="Factory\IServant.cs" />
     <Compile Include="Factory\ISummon.cs" />
     <Compile Include="Factory\Servant\Archer.cs" />
@@ -70,6 +81,8 @@
     <Compile Include="Factory\Summon\SaberSummon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prototype\Resume.cs" />
+    <Compile Include="Prototype\WorkExperience.cs" />
     <Compile Include="Proxy\IService.cs" />
     <Compile Include="Proxy\ProxyService.cs" />
     <Compile Include="Proxy\RemoteService.cs" />
@@ -85,6 +98,9 @@
     <Compile Include="Strategy\CashSuper\CashRebate.cs" />
     <Compile Include="Strategy\CashSuper\CashReturn.cs" />
     <Compile Include="Strategy\ICashSuper.cs" />
+    <Compile Include="Template\TestPaper.cs" />
+    <Compile Include="Template\TestPaperA.cs" />
+    <Compile Include="Template\TestPaperB.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

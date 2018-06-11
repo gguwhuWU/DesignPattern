@@ -3,11 +3,16 @@ using designPatterns.Decorator.Breakfast;
 using designPatterns.Decorator.CondimentDecorator;
 using designPatterns.Factory;
 using designPatterns.Factory.Summon;
+using designPatterns.Prototype;
 using designPatterns.Proxy;
 using designPatterns.SimpleFactory;
 using designPatterns.Strategy;
 using designPatterns.Strategy.CashSuper;
+using designPatterns.Template;
+using designPatterns.Facade;
 using System;
+using designPatterns.Builder.BuilderComputer;
+using designPatterns.Builder;
 
 namespace designPatterns
 {
@@ -15,9 +20,92 @@ namespace designPatterns
     {
         static void Main(string[] args)
         {
-            UseFactory();
+            UseObserver();
 
             Console.ReadLine();
+        }
+
+        /// <summary>
+        /// 觀察者
+        /// </summary>
+        public static void UseObserver()
+        {
+
+        }
+
+        /// <summary>
+        /// 建造者
+        /// 範例參考來源:
+        /// http://www.cnblogs.com/zhili/p/BuilderPattern.html
+        /// https://blog.csdn.net/carson_ho/article/details/54910597
+        /// </summary>
+        public static void UseBuilder()
+        {
+            ConcreteHighEndBuilder highEndBuilder = new ConcreteHighEndBuilder();
+            ConcreteMiddleEndBuilder middleEndBuilder = new ConcreteMiddleEndBuilder();
+            ConcreteLowEndBuilder lowEndBuilder = new ConcreteLowEndBuilder();
+
+            Director director = new Director();
+            director.Construct(highEndBuilder);
+            director.Construct(middleEndBuilder);
+            director.Construct(lowEndBuilder);
+
+            highEndBuilder.GetComputer();
+            middleEndBuilder.GetComputer();
+            lowEndBuilder.GetComputer();
+        }
+
+        /// <summary>
+        /// 外觀
+        /// 範例來源:大話設計模式
+        /// </summary>
+        public static void UseFacade()
+        {
+            FacadeSystem fa = new FacadeSystem();
+            fa.MethodA();
+            fa.MethodB();
+        }
+
+        /// <summary>
+        /// 範本
+        /// 範例來源:大話設計模式
+        /// </summary>
+        public static void UseTemplate()
+        {
+            TestPaperA ta = new TestPaperA();
+            ta.DisplayName();
+            ta.TestQuestion1();
+            ta.TestQuestion2();
+            ta.TestQuestion3();
+
+            TestPaperB tb = new TestPaperB();
+            tb.DisplayName();
+            tb.TestQuestion1();
+            tb.TestQuestion2();
+            tb.TestQuestion3();
+        }
+
+        /// <summary>
+        /// 原型(複製)
+        /// 範例來源:大話設計模式
+        /// </summary>
+        public static void UsePortotype()
+        {
+            Resume r1 = new Resume("小吳");
+            r1.SetPersonalInfo("m", 25);
+            r1.SetWorkExperience(new DateTime(1999, 1, 1), "x公司");
+
+            Resume r2 = (Resume)r1.Clone();
+            r2.SetPersonalInfo("f", 20);
+            r2.SetWorkExperience(new DateTime(1994, 5, 5), "y公司");
+
+            Resume r3 = (Resume)r1.Clone();
+            r3.SetPersonalInfo("f", 22);
+            r3.SetWorkExperience(new DateTime(1996, 11, 11), "z公司");
+
+            r1.Display();
+            r2.Display();
+            r3.Display();
         }
 
         /// <summary>
@@ -70,6 +158,7 @@ namespace designPatterns
 
         /// <summary>
         /// 策略
+        /// 範例參考來源:大話設計模式
         /// </summary>
         public static void UseStrategy()
         {
@@ -82,6 +171,7 @@ namespace designPatterns
 
         /// <summary>
         /// 簡單工廠
+        /// 範例參考來源:大話設計模式
         /// </summary>
         public static void UseSimpleFactory()
         {
