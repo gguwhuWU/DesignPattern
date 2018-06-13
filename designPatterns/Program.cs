@@ -13,6 +13,9 @@ using designPatterns.Facade;
 using System;
 using designPatterns.Builder.BuilderComputer;
 using designPatterns.Builder;
+using designPatterns.Observer;
+using designPatterns.AbstractFactory;
+using designPatterns.State;
 
 namespace designPatterns
 {
@@ -20,17 +23,109 @@ namespace designPatterns
     {
         static void Main(string[] args)
         {
-            UseObserver();
+            UseState();
 
             Console.ReadLine();
         }
 
         /// <summary>
+        /// 狀態
+        /// 範例參考來源:
+        /// 大話設計模式
+        /// https://xyz.cinc.biz/2013/07/state-pattern.html
+        /// https://dotblogs.com.tw/pin0513/2011/01/16/20842
+        /// </summary>
+        public static void UseState()
+        {
+            Person person = new Person(200, 20, 30);
+            person.Attack();
+            person.Move();
+            person.SupplyBlood();
+
+            person.blood = 60;
+            person.Attack();
+            person.Move();
+            person.SupplyBlood();
+
+            person.blood = 2;
+            person.Attack();
+            person.Move();
+            person.SupplyBlood();
+
+            person.blood = 150;
+            person.Attack();
+            person.Move();
+            person.SupplyBlood();
+        }
+
+        /// <summary>
+        /// 抽象工廠
+        /// 範例參考來源:
+        /// 大話設計模式
+        /// https://blog.techbridge.cc/2017/05/22/factory-method-and-abstract-factory/
+        /// https://skyyen999.gitbooks.io/-study-design-pattern-in-java/content/abstractFactory1.html
+        /// </summary>
+        public static void UseAbstractFactory()
+        {
+            IPizzaFactory pizzaFactory = new PizzaHutPizzaFactory();
+            //IPizzaFactory pizzaFactory = new DominosPizzaFactory();
+
+            pizzaFactory.CreateHawaiiPizza();
+            pizzaFactory.CreateSpecialTakoyakiPizza();
+
+            // 使用 基本反射
+            pizzaFactory.CreateBeefPizza();
+
+            // 使用 反射的工廠
+            IPizzaFactory pizzaFactoryOfReflection = new ReflectionPizzaFactory();
+            pizzaFactoryOfReflection.CreateSpecialBeefPizza();
+        }
+
+        /// <summary>
         /// 觀察者
+        /// 範例參考來源:
+        /// https://dotblogs.com.tw/joysdw12/2013/03/13/96531
         /// </summary>
         public static void UseObserver()
         {
+            // 產生一間報社
+            NewspaperOffice office = new NewspaperOffice();
 
+            // Arvin 想要訂閱報紙
+            Customer arvin = new Customer("Arvin");
+            office.SubscribeNewspaper(arvin);
+
+            // Jack 想要訂閱報紙
+            Customer jack = new Customer("Jack");
+            office.SubscribeNewspaper(jack);
+
+            // 報社發送了第一則新聞
+            office.SendNewspaper("News One.......");
+
+            // Arvin 不想看報紙了，要退訂
+            office.UnsubscribeNewspaper(arvin);
+
+            // 報社發送了第二則新聞
+            office.SendNewspaper("News Two.......");
+
+            /******用在其他地方的觀察者*****/
+            Subject office2 = new Subject();
+            OtherObserver oth1 = new OtherObserver("test1");
+            OtherObserver oth2 = new OtherObserver("test2");
+            office2.RegisterObserver(oth1);
+            office2.RegisterObserver(oth2);
+
+            Console.WriteLine("");
+
+            office2.notifyObservers(" jojo good");
+
+            Console.WriteLine("");
+
+            EventHandlerSubject office3 = new EventHandlerSubject();
+            office3.Update += new MyEventHandler(oth1.Update);
+            office3.Update += new MyEventHandler(oth2.Update);
+            //office3.Update -= new EventHandler(oth2.Update);
+            office3.notifyObservers(" dio die");
         }
 
         /// <summary>
