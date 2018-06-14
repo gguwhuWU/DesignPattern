@@ -16,6 +16,7 @@
         State,
         Adapter,
         Memento,
-        Composite
+        Composite,
+        Iterator
     }
 }

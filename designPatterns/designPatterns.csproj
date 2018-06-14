@@ -130,6 +130,7 @@
     <Compile Include="Factory\Summon\ArcherSummon.cs" />
     <Compile Include="Factory\Summon\SaberSummon.cs" />
     <Compile Include="IPatternExample.cs" />
+    <Compile Include="Iterator\IteratorExample.cs" />
     <Compile Include="Memento\GameCaretaker.cs" />
     <Compile Include="Memento\GameMemento.cs" />
     <Compile Include="Memento\GamePlayer.cs" />
