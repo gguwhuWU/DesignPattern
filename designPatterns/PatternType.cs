@@ -17,6 +17,9 @@
         Adapter,
         Memento,
         Composite,
-        Iterator
+        Iterator,
+        Singleton,
+        Bridge,
+        Command
     }
 }
