@@ -20,6 +20,8 @@
         Iterator,
         Singleton,
         Bridge,
-        Command
+        Command,
+        ChainOfResponsibility,
+        Mediator
     }
 }
