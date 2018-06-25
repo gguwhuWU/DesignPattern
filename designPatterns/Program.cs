@@ -7,7 +7,7 @@ namespace designPatterns
         static void Main(string[] args)
         {
             PatternExampleContext patternExample = new PatternExampleContext();
-            patternExample.DoPatternExample(PatternType.Visitor2);
+            patternExample.DoPatternExample(PatternType.OOP);
 
             Console.ReadLine();
         }

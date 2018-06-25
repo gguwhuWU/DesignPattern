@@ -198,6 +198,15 @@
     <Compile Include="Observer\ObserverExample.cs" />
     <Compile Include="Observer\OtherObserver.cs" />
     <Compile Include="Observer\Subject.cs" />
+    <Compile Include="OOP\Animals\Animal.cs" />
+    <Compile Include="OOP\Animals\Cat.cs" />
+    <Compile Include="OOP\Animals\Dog.cs" />
+    <Compile Include="OOP\Animals\Doraemon.cs" />
+    <Compile Include="OOP\Animals\Mouse.cs" />
+    <Compile Include="OOP\Animals\SunWukong.cs" />
+    <Compile Include="OOP\CatShoutEventArgs2.cs" />
+    <Compile Include="OOP\IChange.cs" />
+    <Compile Include="OOP\OOPExample.cs" />
     <Compile Include="PatternExampleFactroy.cs" />
     <Compile Include="PatternType.cs" />
     <Compile Include="Program.cs" />

@@ -26,6 +26,7 @@
         Flyweight,
         Interpreter,
         Visitor,
-        Visitor2
+        Visitor2,
+        OOP
     }
 }
