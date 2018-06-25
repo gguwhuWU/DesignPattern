@@ -168,6 +168,16 @@
     <Compile Include="Factory\Servant\Saber.cs" />
     <Compile Include="Factory\Summon\ArcherSummon.cs" />
     <Compile Include="Factory\Summon\SaberSummon.cs" />
+    <Compile Include="Flyweight\FlyweightExample.cs" />
+    <Compile Include="Flyweight\Font.cs" />
+    <Compile Include="Flyweight\FontFactory.cs" />
+    <Compile Include="Flyweight\Style.cs" />
+    <Compile Include="Interpreter\Context.cs" />
+    <Compile Include="Interpreter\Expression.cs" />
+    <Compile Include="Interpreter\Expression\AstrologicalSignExpression.cs" />
+    <Compile Include="Interpreter\Expression\ZodiacExpression.cs" />
+    <Compile Include="Interpreter\Expression\EarthlyBranchesExpression.cs" />
+    <Compile Include="Interpreter\InterpreterExample.cs" />
     <Compile Include="IPatternExample.cs" />
     <Compile Include="Iterator\IteratorExample.cs" />
     <Compile Include="Mediator\Host.cs" />
@@ -227,6 +237,23 @@
     <Compile Include="Template\TestPaper.cs" />
     <Compile Include="Template\TestPaperA.cs" />
     <Compile Include="Template\TestPaperB.cs" />
+    <Compile Include="Visitor2\IElement.cs" />
+    <Compile Include="Visitor2\IObjectStructure.cs" />
+    <Compile Include="Visitor2\IVisitor.cs" />
+    <Compile Include="Visitor2\ObjectStructure.cs" />
+    <Compile Include="Visitor2\Product.cs" />
+    <Compile Include="Visitor2\ProductTypeEnum.cs" />
+    <Compile Include="Visitor2\Visitor2Example.cs" />
+    <Compile Include="Visitor2\Visitors\VisitorDiscount4Count.cs" />
+    <Compile Include="Visitor2\Visitors\VisitorDiscount4TotalPrice.cs" />
+    <Compile Include="Visitor\Actions\Fail.cs" />
+    <Compile Include="Visitor\Actions\Success.cs" />
+    <Compile Include="Visitor\IAction.cs" />
+    <Compile Include="Visitor\IPerson.cs" />
+    <Compile Include="Visitor\ObjectStructure.cs" />
+    <Compile Include="Visitor\Persons\Man.cs" />
+    <Compile Include="Visitor\Persons\Woman.cs" />
+    <Compile Include="Visitor\VisitorExample.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

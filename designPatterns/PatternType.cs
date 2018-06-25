@@ -22,6 +22,10 @@
         Bridge,
         Command,
         ChainOfResponsibility,
-        Mediator
+        Mediator,
+        Flyweight,
+        Interpreter,
+        Visitor,
+        Visitor2
     }
 }
